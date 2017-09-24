@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+    <title>{% block title_page %}{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <a class="title" href="/">YourPost</a>
+        {% load socialaccount %}
+        <a href="{% provider_login_url "facebook" method="oauth2" %}">Login with Facebook</a>
+        <div class="menu">
+            {% if user.is_authenticated %}
+                {% if  user.socialaccount_set.all.0.get_avatar_url %}
+                    <img class="image-profile" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+                {% else %}
+                    <img class="image-profile" src="{% static 'img/profile.jpg' %}" />
+                {% endif %}
+                <a>{{ user.username.capitalize }}</a>
+                <a class="button-basic" href="/accounts/logout">Logout</a>
+                <a class="button-basic" href="{% url 'account_email' %}">Change E-mail</a>
+                {% comment %} <a href=""><img class="image-plus"src="{% static 'img/plus.png' %}" alt=""></a> {% endcomment %}
+            {% else %}
+                <a class="button-basic" href="{% url 'account_login' %}">Login</a>
+                <a class="button-basic" href="{% url 'account_signup' %}">Signup</a>
+            {% endif %}
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

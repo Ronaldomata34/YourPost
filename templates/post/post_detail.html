@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title_page %}
+    {{post.title}}
+{% endblock %}
+
+{% block content %}
+    titulo: {{post.title}} <br>
+    Texto: {{ post.text }} <br>
+    {% if post.comments.all %}
+        <h3>Comentarios</h3>
+    {% else %}
+        <h3>Este post no tiene comentarios aún</h3>
+    {% endif %}
+    {% for comment in post.comments.all %}
+        Por: {{comment.author}} <br>
+        contenido: {{comment.text}} <br>
+        <hr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button-basic {
+    display: inline-block;
+    padding: 8px 15px;
+    background: white;
+    border-radius: 20px;
+    color: green;
+    font-weight: 800;
+}
+
+/* Header  */
+.header {
+    background: green;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    position: relative;
+}
+
+.title {
+    font-size: 45px;
+    color: white;
+    font-weight: 900;
+}
+
+.menu a {
+    margin-left: 20px;
+}
+
+.menu .image-profile {
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 400px;
+    bottom: 10px;
+}
+/* Header  */

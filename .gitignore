@@ -1,0 +1,3 @@
+postenv
+*.pyc
+*.sqlite3
