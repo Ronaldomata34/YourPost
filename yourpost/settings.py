@@ -185,3 +185,13 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 #Facebook SocialApp
+
+# Email Client Configurations
+
+#if you have an email client place it down
+#DEFAULT_FROM_EMAIL = 'you@domain.com' 
+
+#if you want to see email from console use this code
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Email Client Configurations

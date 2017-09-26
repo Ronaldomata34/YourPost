@@ -7,6 +7,7 @@
 {% block content %}
     {% for post in posts %}
         <a href="{% url 'post:detail' post.pk %}">{{post.title}}</a> <br> 
-        comentarios: {{post.comments.all|length}}
+        comentarios: {{post.comments.all|length}} <br>
+        <hr>
     {% endfor %}
 {% endblock %}
